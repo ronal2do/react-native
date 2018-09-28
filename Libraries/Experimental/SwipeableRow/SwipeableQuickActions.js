@@ -27,7 +27,7 @@ const View = require('View');
 import type {ViewStyleProp} from 'StyleSheet';
 
 type Props = $ReadOnly<{|
-  style?: ?ViewStyleProp,
+  style?: ViewStyleProp,
 |}>;
 
 class SwipeableQuickActions extends React.Component<Props> {
