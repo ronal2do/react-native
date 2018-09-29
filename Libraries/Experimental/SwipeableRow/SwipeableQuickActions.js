@@ -10,7 +10,6 @@
 
 'use strict';
 
-const DeprecatedViewPropTypes = require('DeprecatedViewPropTypes');
 const React = require('React');
 const StyleSheet = require('StyleSheet');
 const View = require('View');
@@ -25,11 +24,13 @@ const View = require('View');
  *   <SwipeableQuickActionButton {..props} />
  * </SwipeableQuickActions>
  */
-class SwipeableQuickActions extends React.Component<{style?: $FlowFixMe}> {
-  static propTypes = {
-    style: DeprecatedViewPropTypes.style,
-  };
+import type {ViewStyleProp} from 'StyleSheet';
 
+type Props = $ReadOnly<{|
+  style?: ViewStyleProp,
+|}>;
+
+class SwipeableQuickActions extends React.Component<Props> {
   render(): React.Node {
     // $FlowFixMe found when converting React.createClass to ES6
     const children = this.props.children;
